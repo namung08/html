@@ -1,0 +1,25 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // 화살표 함수도 함수 호이스팅의 대상은 아님
+  var helloA = () => {
+    return "arrow function say";
+  };
+  document.write("<h1>" + helloA() + "</h1>");
+  console.log(helloA());
+  var helloB = () => "arrow function say2";
+  document.write("<h1>" + helloB() + "</h1>");
+  console.log(helloB());
+  // 매개변수가 있는 경우 - 하나인 경우
+  var helloC = x => document.write("<h1>" + x + "</h1>");
+  helloC("화살표 매개변수 있는 경우")
+  // 매개변수가 있는 경우 - 여러개
+  var helloD = (a,b) => document.write("<h1>" + (a+b) + "</h1>");
+  helloD(1,3)
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<script>
+		function ask(question, tes, no) {
+			// 작성
+			if (confirm(qurstion)) {
+				yes();
+			} else {
+				no();
+			}
+		}
+		ask(
+				"동의하십니까?",
+				function(){alert("동의하셨습니다");},
+		        function(){alert("취소 하셨습니다");}
+
+		);
+	</script>
+</body>
+</html>

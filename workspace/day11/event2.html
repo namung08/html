@@ -1,0 +1,24 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <body>
+    <a href="https://naver.com" id="link1">naver</a>
+    <hr />
+    <a href="https://google.com" id="link2">google</a>
+  </body>
+</html>
+<script>
+  $("#link1").click(function () {
+    alert("link1 clicked");
+  });
+  $("#link2").click(function (event) {
+    // event.preventDefault();
+    // -> 현재 이벤트의 기본동작 href를 중단
+    event.preventDefault();
+    alert("link2 clicked");
+  });
+</script>

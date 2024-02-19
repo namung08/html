@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <body>
+    <!-- 베너 영역 -->
+    <div id="banner">
+      <a href="#" id="banner_link" target="_blank">
+        <img src="img/0.png" id="banner_img" width="320" />
+      </a>
+    </div>
+    <script>
+      $(function () {
+        // 이미지와 링크 정보 배열
+        var bannerInfo = [
+          { img: "img/1.png", url: "https://www.youtube.com" },
+          { img: "img/2.png", url: "https://www.naver.com" },
+          { img: "img/3.png", url: "https://www.daum.net" },
+          { img: "img/4.png", url: "https://www.google.com" },
+          { img: "img/5.png", url: "https://www.loawa.com" },
+          { img: "img/6.png", url: "https://lostark.inven.co.kr/" },
+        ];
+
+        // 타이머를 이용하여 1초마다 이미지 변경
+        setInterval(function () {
+          // 랜덤으로 배열에서 이미지와 링크를 선택
+          var randomIndex = Math.floor(Math.random() * bannerInfo.length);
+          var randomBanner = bannerInfo[randomIndex];
+
+          // 이미지와 링크를 변경
+          $("#banner_img").attr("src", randomBanner.img);
+          $("#banner_link").attr("href", randomBanner.url);
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>

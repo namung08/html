@@ -1,0 +1,2 @@
+CsProject.txt
+.idea

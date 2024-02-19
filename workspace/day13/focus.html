@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <body>
+    <form id="myform">
+      <h3>주만번호를 입력하세요</h3>
+      <input type="text" name="jumin1" id="jumin1" />
+      -
+      <input type="text" name="jumin2" id="jumin2" />
+    </form>
+    <script>
+      $(document).ready(function () {
+        $("#jumin1, #jumin2").focus(function () {
+          $(this).css("background-color", "lightblue");
+        });
+
+        $("#jumin1, #jumin2").blur(function () {
+          $(this).css("background-color", "#fff");
+        });
+
+        $("#jumin1").on("input", function () {
+          if ($(this).val().length >= 6) {
+            $("#jumin2").focus();
+          }
+        });
+
+        // $("#jumin1").keyup(function () {
+        //   if ($(this).val().length >= 6) {
+        //     let input = value.substring(0,6);
+        //     $(this).val(input);
+        //     $("#jumin2").focus();
+        //   }
+        // });
+      });
+    </script>
+  </body>
+</html>

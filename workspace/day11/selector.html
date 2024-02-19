@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    .selected {
+      background-color: aqua;
+      border: 2px solid darkblue;
+    }
+  </style>
+  <body>
+    <ul id="list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JvaScript</li>
+      <li>PHP</li>
+      <li>MySQL</li>
+    </ul>
+    <script>
+      // $('#list li:even').addClass('selected');
+      // index 번호 홀수 선택
+      // $('#list li:odd').addClass('selected');
+      // 처음
+      // $('#list li:first').addClass('selected');
+      // 마지막
+      $("#list li:last").addClass("selected");
+    </script>
+  </body>
+</html>

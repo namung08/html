@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    .selected {
+      background-color: darkblue;
+      border: 0.125rem aqua;
+    }
+  </style>
+  <body>
+    <ul id="list">
+      <li id="htmlId">html</li>
+      <li class="selectedClass">css</li>
+      <li>javascript</li>
+      <li>jsp</li>
+      <li id="oracleId">oracle</li>
+    </ul>
+    <script>
+      // id
+      // $('#htmlId').addClass('selected');
+      // class
+      // $(".selectedClass").addClass('selected');
+      // tage
+      // $('li').addClass('selected')
+      // 여러개 선택
+      // $('#htmlId, .selectedClass').addClass('selected');
+      // 여러개 선택
+      // $("list li").addClass('selected');
+      // 인자와 인덱스가 동일한 엘리먼트를 찾아내는 선택자
+      $("#list li:eq(2)").addClass("selected");
+    </script>
+  </body>
+</html>

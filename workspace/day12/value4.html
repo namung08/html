@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <body>
+    <form id="myform">
+      <label> <input type="radio" name="subject" value="html" />HTML </label>
+      <label> <input type="radio" name="subject" value="css" />CSS </label>
+      <label>
+        <input type="radio" name="subject" value="javascript" />JAVASCRIPT
+      </label>
+      <button type="submit">입력값 확인</button>
+    </form>
+    <script>
+        $('#myform').submit(function(e) {
+            e.preventDefault();
+            let subject = $('input:checked');
+            console.log(subject);
+            // subject validation check
+            if(subject.length == 0) {
+                alert('subject is not selected');
+                // focus() 하지 말기
+                return false;
+            }
+            console.log(subject.val());
+            let subject_val = subject.val();
+            // subject 과목 선택, -> alert("선택한 과목은 : "+?+" 입니다.")
+            alert("선택한 과목은 : " + subject_val + " 입니다.");
+            
+        })
+    </script>
+  </body>
+</html>

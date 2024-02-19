@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <body>
+    <h1>.hide(), .show() 메소드</h1>
+    <p>
+      <button id="btnHide">문장 암살</button>
+      <button id="btnShow">문장 부활</button>
+    </p>
+    <div>Hi i'm button</div>
+    <script>
+      $("#btnHide").on("click", function () {
+        $("div").hide("slow");
+      });
+      $("#btnShow").on("click", function () {
+        $("div").show("fast");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+	<meta charSet="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<input type="button" value="property" id="target1"><input type="button" value="listener" id="target2">
+</body>
+</html>
+<script>
+	function onclick() {
+		alert('click!!!');
+	}
+	
+	function onclick2() {
+		alert('클릭!!!');
+	}
+	
+	// property
+	document.getElementById("target1").onclick = function () {
+		onclick();
+	}
+	document.getElementById("target1").onclick = function () {
+		onclick2();
+	}
+	//listener
+	document.getElementById("target2").addEventListener("click", onclick);
+	document.getElementById("target2").addEventListener("click", onclick2);
+	
+	// remove : 이벤트 제거
+	document.getElementById('target').removeEventListener("click", onclick);
+</script>

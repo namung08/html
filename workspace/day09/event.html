@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<h1 onmouseover="showResult()" onmouseout="hide()">10 + 50 =
+		<span id="question">?</span>
+	</h1>
+    <p>결과를 보시려면 수식 위에 마우스롤 올리세요</p>
+<script>
+	function showResult() {
+		// console.log('mouse event')
+		document.getElementById("question").innerHTML = 60;
+	}
+	// 마우스를 벗어났을 때
+	function hide() {
+        document.getElementById("question").innerHTML = '?';
+    }
+
+</script>
+</body>
+</html>

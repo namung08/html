@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <body>
+    <input type="button" value="Click me" id="click_me" />
+    <input type="button" value="unbind" id="remove_event" />
+    <script>
+      // ready event: HTML 랜더링이 완료된 후 호출
+      // $(document).bind("ready", function () {
+      function clickHandler(e) {
+        alert("hello javascript");
+      }
+      $("#click_me").bind("click", clickHandler);
+      $("#remove_event").bind("click", function () {
+        $("#click_me").unbind("click", clickHandler);
+      });
+
+      // });
+    </script>
+  </body>
+</html>

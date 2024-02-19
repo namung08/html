@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<p>
+	<label>event check on</label>
+	<input type="checkbox" name="" id="eventCheck" />
+</p>
+<p><a href="http://naver.com" onclick="if(document.getElementById('eventCheck').checked) return false">naver</a></p>
+<p>
+<form action="http://naver.com" onsubmit="if(document.getElementById('eventCheck').checked) return false">
+	<input type="submit" value="제출">
+</form>
+</p>
+<script>
+	// return false
+	// onclick
+	
+	document.getElementById('eventA').onclick = function (){
+		if(document.getElementById('eventCheck').checked) return false;
+	}
+</script>
+</body>
+</html>

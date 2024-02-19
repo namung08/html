@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    .event-box {
+      font-size: 20px;
+      padding: 20px 10px;
+      margin: 10px auto;
+      display: block;
+      text-align: center;
+      width: 500px;
+    }
+    .input {
+      border: 5px solid #007;
+      background: #d5d5d5;
+      color: #009;
+    }
+    .console {
+      border: 5px solid #a0a;
+      background: #d5d5d5;
+      color: #505;
+    }
+  </style>
+  <body>
+    <input
+      type="text"
+      id="listener"
+      class="event-box input"
+      placeholder="여기에 입력하세요"
+    />
+    <div class="event-box console">
+      up=<span id="result1">0</span>, down=<span id="result2">0</span>
+    </div>
+    <script>
+      let i = 0;
+      let j = 0;
+      $("#listener").keyup(function () {
+        i++;
+        $("#result1").html(i);
+      });
+      $("#listener").keydown(function () {
+        j++;
+        $("#result2").html(j);
+      });
+    </script>
+  </body>
+</html>

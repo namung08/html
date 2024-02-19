@@ -1,0 +1,51 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style></style>
+  <body>
+    <div>
+      <button type="button" id="single">클릭하세요</button>
+    </div>
+    <hr />
+    <div>
+      <button type="button" class="multi">btn0(0번 클릭됨)</button>
+      <button type="button" class="multi">btn1(0번 클릭됨)</button>
+      <button type="button" class="multi">btn2(0번 클릭됨)</button>
+      <button type="button" class="multi">초기화</button>
+    </div>
+  </body>
+</html>
+<script>
+//   let count = 0;
+    let cnt = {single : 0};
+  let cnt2 = {one : 0, two : 0, three : 0};
+  $("#single").click(function () {
+    cnt.single++;
+    $(this).text(`count : ${cnt.single}`);
+  });
+  $(".multi").click(function () {
+    console.log($(this).index());
+    if ($(this).index() == 0) {
+      cnt2.one++;
+      $(this).text(`btn0(${cnt2.one}번 클릭됨)`);
+    }
+    if ($(this).index() == 1) {
+      cnt2.two++;
+      $(this).text(`btn1(${cnt2.two}번 클릭됨)`);
+    }
+    if ($(this).index() == 2) {
+        cnt2.three++;
+      $(this).text(`btn2(${cnt2.three}번 클릭됨)`);
+    }
+    if ($(this).index() == 3) {
+        cnt2.one = 0;
+        cnt2.two = 0;
+        cnt2.three = 0;
+      $(this).text(`초기화`);
+    }
+  });
+</script>

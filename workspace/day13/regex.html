@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <form id="myform">
+      <div>
+        <label>
+          사용자 이름
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="한글만 입력"
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          나이
+          <input
+            type="text"
+            name="userage"
+            id="userage"
+            placeholder="숫자만 입력"
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          아이디
+          <input
+            type="text"
+            name="userid"
+            id="userid"
+            placeholder="영어+숫자, 최대 20자 입력"
+          />
+        </label>
+      </div>
+      <button type="submit">입력값 확인</button>
+    </form>
+    <script>
+      $(document).ready(function () {
+        $("#myform").submit(function (event) {
+          event.preventDefault();
+          validateInputs();
+        });
+
+        function validateInputs() {
+          var usernameInput = $("#username");
+          var userageInput = $("#userage");
+          var useridInput = $("#userid");
+
+          // 사용자 이름에 한글만 입력되었는지 확인
+          var usernamePattern = /^[가-힣]+$/;
+          if (!usernamePattern.test(usernameInput.val())) {
+            alert("이름은 한글만 입력 가능합니다.");
+            $("#username").val("");
+            $("#username").focus();
+            return;
+          }
+
+          // 사용자 나이에 숫자만 입력되었는지 확인
+          var useragePattern = /^[0-9]*$/;
+          if (!useragePattern.test(userageInput.val())) {
+            alert("나이는 숫자만 입력 가능합니다.");
+            $("#userage").val("");
+            $("#userage").focus();
+            return;
+          }
+
+          var useridPattern = /^[a-zA-Z0-9]*$/;
+          if (!useridPattern.test(useridInput.val())) {
+            alert("아이디는 영문과 숫자만 입력 가능합니다.");
+            $("#userid").val("");
+            $("#userid").focus();
+            return;
+          }
+
+          if (useridInput.val().length > 20) {
+            alert("아이디는 최대 20자까지 입력 가능합니다.");
+            return;
+          }
+
+          alert("검사 완료! 회원가입 시작!");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<script>
+		let arr = [1,2,3,4,5];
+		for(let i=0; i<arr.length; i++){
+			console.log(arr[i]);
+		}
+		
+		console.log("----------------------------------------------------");
+		// 내장함수 forEach
+		arr.forEach(function(elm){
+			console.log(elm);
+		});
+		
+		console.log("----------------------------------------------------");
+		// 화살표 함수 나오게
+		arr.forEach((elm) =>
+				{
+					console.log(elm);
+				}
+		
+		);
+		
+		console.log("----------------------------------------------------");
+		// arr 배열 요소의 값의 *2한 신규배열 (newArr)을 ForEach를 사용해서 요소의 값 넣기 결과는 newArr -> 2,4,6,8,10
+		    let newArr = [];
+            arr.forEach(function(elm){
+                newArr.push(elm*2);
+            });
+            console.log(newArr);
+		
+		// arr 배열 요소의 값의 *2한 신규 배열(newArr)을  forEach를 사용해서 요소의 값 넣기
+		// 결과 newArr -> 2,4,6,8,10
+		let arr = [1,2,3,4,5];
+		// newArr 이라는 빈 배열을 생성
+		let newArr = new Array;
+		arr.forEach((key) => {
+			newArr.push(key*2);
+		});
+		console.log(newArr);
+  
+	</script>
+</body>
+</html>

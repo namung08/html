@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <body>
+    <select name="site" id="site">
+      <option vlaue="">>---선택하세요---<</option>
+      <option vlaue="http://www.naver.com">네이버</option>
+      <option vlaue="http://www.daum.net">다음</option>
+      <option vlaue="http://www.google.com">구글</option>
+    </select>
+    <script>
+      $("#site").on('change', function(){
+        let val = $("#site >option:selected").attr('value');
+ 
+        if(!val){
+            alert("선택된 항목이 없습니다.");
+            return false;
+        }
+        window.open(val);
+      });
+    </script>
+  </body>
+</html>

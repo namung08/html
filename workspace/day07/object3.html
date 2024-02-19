@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<script>
+		let person = {
+			key : "value",
+			key2 : true,
+			key3 : undefined,
+			key4 : null,
+            key5 : {},
+            key6 : function () {}
+		};
+		// 키 이름이 중복만 되지 않으면 되고 중복된다면 가장 마지막key가 우선된다
+		
+		console.log(person.key);
+		console.log(person["key"]);
+
+		</script>
+</body>
+</html>

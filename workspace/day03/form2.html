@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>폼</h1>
+    <from method="post" action="./regist.jsp">
+        <p>아이디: <input type="text" name="id" value="기본값"/></p>
+        <p>패스워드: <input type="password" name="pw" placeholder="비밀번호 입력"/></p>
+        <fieldset>
+            <legend>성별</legend>
+            <div>
+              <p>
+                <input type="radio" name="gender" id="" value="M" checked />남자
+                <input type="radio" name="gender" id="" value="W" />여자
+              </p>
+            </div>
+          </fieldset>
+        <fieldset>
+            <legend>좋아하는 과목</legend>
+            <div>
+              <p>
+                <input type="checkbox" value="JAVA" name="hobby" id="" checked />JAVA
+                <input type="checkbox" value="JSP" name="hobby" id="" />JSP
+                <input type="checkbox" value="HTML" name="hobby" id="" />HTML
+                <input type="checkbox" value="CSS" name="hobby" id="" checked />CSS
+              </p>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>직업</legend>
+            <div>
+                <select name="job" id="job">
+                    <option>---선택하세요---</option>
+                    <option value="ST">학생</option>
+                    <option value="TE">선생님</option>
+                    <option value="ME">개발자</option>
+                </select>
+            </div>
+        </fieldset>
+        <fieldset>
+            <p>자기소개<br>
+                <textarea name="자기소개" id="" cols="30" rows="10">자기소개서를 입력해주세요
+                </textarea>
+            </p>
+        </fieldset>
+        <div class="form-group row">
+            <label class="col-md-2 offset-md-3 form-label"> 주 소 <span class="text-danger">*</span> </label>
+            <div class="col-md-2">
+              <input type="text" class="form-control" name="postcode" id="postcode" placeholder="우편번호" readonly />
+            </div>
+            <div class="col-md-2 postcode-btn">
+              <button type="button" class="btn btn-info" onclick="execDaumPostcode()">우편번호 찾기</button>
+            </div>
+            <div class="offset-md-5 col-md-4 mt-2">
+              <input type="text" class="form-control" name="address" id="address" placeholder="도로명 주소" readonly />
+            </div>
+            <div class="offset-md-5 col-md-4 mt-2">
+              <input
+                type="text"
+                class="form-control"
+                id="detailA_address"
+                name="detailAddress"
+                placeholder="상세 주소"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-extra">
+            <input type="text" class="form-extra" name="refer-to" id="refer-to" placeholder="참고사항" disabled />
+          </div>
+          <div>
+            <p>
+                숨김처리: <input type="hidden" class=""> 
+            </p>
+          </div>
+          <input type='reset' value="다시쓰기">
+          <input type='submit' value="확인">
+      </from>
+</body>
+</html>
